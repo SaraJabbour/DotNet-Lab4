@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DotNet_Lab4.Models.Orders>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrdersType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MixID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUSTID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrdersTIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdersType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MixID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdersTIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deleted)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrdersID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrdersID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrdersID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

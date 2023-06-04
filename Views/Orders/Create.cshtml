@@ -1,0 +1,63 @@
+﻿@model DotNet_Lab4.Models.Orders
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Orders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrdersType" class="control-label"></label>
+                <input asp-for="OrdersType" class="form-control" />
+                <span asp-validation-for="OrdersType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MixID" class="control-label"></label>
+                <input asp-for="MixID" class="form-control" />
+                <span asp-validation-for="MixID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUSTID" class="control-label"></label>
+                <input asp-for="CUSTID" class="form-control" />
+                <span asp-validation-for="CUSTID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrdersTIME" class="control-label"></label>
+                <input asp-for="OrdersTIME" class="form-control" />
+                <span asp-validation-for="OrdersTIME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="deleted" /> @Html.DisplayNameFor(model => model.deleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

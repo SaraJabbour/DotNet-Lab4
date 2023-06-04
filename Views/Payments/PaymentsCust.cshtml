@@ -1,0 +1,36 @@
+﻿@model List<Payment>
+
+<h2>Payments for @ViewBag.Date</h2>
+
+@using (Html.BeginForm("PaymentsCust", "Payments", FormMethod.Get))
+{
+    <div class="form-group">
+        @Html.Label("Select a date:")
+        @Html.TextBox("date", null, new { type = "date", @class = "form-control" })
+        <button type="submit" class="btn btn-primary">View Payments</button>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Payment Date</th>
+            <th>Customer ID</th>
+            <th>Payment Amount</th>
+            <!-- Add other table headers for other properties -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.PaymentID</td>
+                <td>@payment.PaymentType</td>
+                <td>@payment.CustID</td>
+                <td>@payment.PayAmount</td>
+                <!-- Add other table cells for other properties -->
+            </tr>
+        }
+    </tbody>
+</table>

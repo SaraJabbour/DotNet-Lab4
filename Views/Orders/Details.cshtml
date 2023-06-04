@@ -1,0 +1,60 @@
+﻿@model DotNet_Lab4.Models.Orders
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrdersType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrdersType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Qty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MixID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MixID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CUSTID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CUSTID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrdersTIME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrdersTIME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.deleted)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.deleted)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OrdersID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
